@@ -1,0 +1,70 @@
+.celula {
+  display: flex;
+  background-color: rgb(80, 84, 136);
+  min-width: 35px;
+  min-height: 35px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.celula.is-value-1 {
+  color: green;
+  background-color: rgb(227, 211, 211);
+}
+
+.celula.is-value-2 {
+  color: blue;
+  background-color: rgb(227, 211, 211);
+}
+
+.celula.is-value-3 {
+  color: red;
+  background-color: rgb(227, 211, 211);
+}
+
+.celula.is-value-4 {
+  color: rgb(120, 0, 0);
+  background-color: rgb(227, 211, 211);
+}
+
+.celula:focus {
+  outline: none;
+}
+
+
+.celula:not(:first-child) {
+  margin-left: 5px;
+}
+
+.celula.hidden {
+  background-color: rgba(0, 166, 255, 0.774);
+}
+
+/* Flagged incorrectly */
+.celula.is-flag:not(.is-mine):not(.hidden) {
+  background-color: rgb(161, 42, 58);
+}
+
+.celula.hidden:hover {
+  background-color: rgb(183, 115, 115);
+}
+
+/* Flagged correctly */
+.celula.is-flag.is-mine:not(.hidden) {
+  background-color: #4f8755;
+}
+
+/* Empty revealed cells */
+.celula.is-empty:not(.hidden):not(.is-mine):not(.is-flagged) {
+  background-color: rgb(227, 211, 211);
+}
+
+/* Clicked on a mine */
+.celula.is-mine.is-clicked {
+  background-color: rgb(161, 35, 51);
+}
